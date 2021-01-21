@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PartSelector from './PartSelector'
 
-export class MainForm extends Component {
+export class Form extends Component {
     render() {
         console.log(this.props.features)
         return (
@@ -13,4 +13,4 @@ export class MainForm extends Component {
     }
 }
 
-export default MainForm
+export default Form

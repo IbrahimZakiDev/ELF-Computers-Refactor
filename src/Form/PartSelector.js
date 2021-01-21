@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
 import slugify from 'slugify';
+import Part from './Part'
 
 
 export class PartSelector extends Component {
-
   render() {
     const USCurrencyFormat = new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD'
     });
-    const features = Object.keys(this.props.features).map((feature, idx) => {
+    return Object.keys(this.props.features).map((feature, idx) => {
       const featureHash = feature + '-' + idx;
       const options = this.props.features[feature].map(item => {
-        const itemHash = slugify(JSON.stringify(item));
+      const itemHash = slugify(JSON.stringify(item));
         return (
           <div key={itemHash} className="feature__item">
             <input
@@ -29,21 +29,11 @@ export class PartSelector extends Component {
           </div>
         );
       });
-
       return (
-        <fieldset className="feature" key={featureHash}>
-          <legend className="feature__name">
-            <h3>{feature}</h3>
-          </legend>
-          {options}
-        </fieldset>
-      );
+        <Part key={featureHash} feature={feature} options={options}/>
+      )
+
     });
-    return (
-      <div>
-        {features}
-      </div>
-    )
   }
 }
 

@@ -2,14 +2,9 @@ import React, { Component } from 'react';
 import Header from './Header'
 import FEATURES from './Store'
 import './App.css';
-import MainForm from './CustomizeForm/MainForm';
-import YourCart from './YourCart/YourCart'
+import Form from './Form/Form';
+import YourCart from './Cart/YourCart'
 
-
-const USCurrencyFormat = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD'
-});
 
 class App extends Component {
   state = {
@@ -46,7 +41,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <main>
-          <MainForm
+          <Form
           features={FEATURES}
           selected={this.state.selected}
           updateFeature={this.updateFeature}

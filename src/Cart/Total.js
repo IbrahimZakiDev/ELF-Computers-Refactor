@@ -20,7 +20,7 @@ export class Total extends Component {
                         <div className="summary__total__value">
                             {USCurrencyFormat.format(total)}
                         </div>
-                        </div>
+                </div>
             </div>
         )
     }

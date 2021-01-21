@@ -8,8 +8,8 @@ export class YourCart extends Component {
         return (
             <div>
                 <h2>Your cart</h2>
-                    <Cart {...this.props} />
-                    <Total {...this.props} />
+                <Cart {...this.props} />
+                <Total {...this.props} />
             </div>
         )
     }
